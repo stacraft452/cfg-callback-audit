@@ -1,0 +1,35 @@
+api,callback_type,header,predicted_category,rationale,empirically_tested
+CallWindowProcW,WNDPROC,winuser.h,A,Same dispatch as CallWindowProcA,false
+CallWindowProcA,WNDPROC,winuser.h,A,Direct dispatch from user32.dll,true
+CallNextHookEx,HOOKPROC,winuser.h,A,Hook chain dispatch,true
+EnumWindows,WNDENUMPROC,winuser.h,A,Enumeration pattern,true
+TrySubmitThreadpoolCallback,PTP_SIMPLE_CALLBACK,threadpoolapiset.h,A,Thread pool dispatch in ntdll,true
+EnumDesktopsA/W,DESKTOPENUMPROC,winuser.h,A,Enumeration pattern,false
+EnumWindowStationsA/W,WINSTAENUMPROC,winuser.h,A,Enumeration pattern,false
+EnumChildWindows,WNDENUMPROC,winuser.h,A,Enumeration pattern,false
+EnumThreadWindows,WNDENUMPROC,winuser.h,A,Enumeration pattern,false
+EnumPropsA/W,PROPENUMPROC,winuser.h,A,Enumeration pattern,false
+EnumPropsExA/W,PROPENUMPROCEX,winuser.h,A,Enumeration pattern,false
+GrayStringA/W,GRAYSTRINGPROC,winuser.h,A,Rare API likely uninstrumented,false
+DrawStateA/W,DRAWSTATEPROC,winuser.h,A,Rare API likely uninstrumented,false
+CreateThreadpoolWork,PTP_WORK_CALLBACK,threadpoolapiset.h,A,Thread pool dispatch,false
+CreateThreadpoolTimer,PTP_TIMER_CALLBACK,threadpoolapiset.h,A,Thread pool dispatch,false
+CreateThreadpoolWait,PTP_WAIT_CALLBACK,threadpoolapiset.h,A,Thread pool dispatch,false
+CreateThreadpoolIo,PTP_IO_CALLBACK,threadpoolapiset.h,A,Thread pool dispatch,false
+RegisterWaitForSingleObject,WAITORTIMERCALLBACK,winbase.h,A,ThreadPool wait callback,false
+LineDDA,LINEDDAPROC,wingdi.h,A,Very rare likely uninstrumented,false
+EnumResourceLanguagesA/W,ENUMRESLANGPROC,winbase.h,A,Enumeration pattern,false
+EnumResourceTypesA/W,ENUMRESTYPEPROC,winbase.h,A,Enumeration pattern,false
+EnumResourceNamesA/W,ENUMRESNAMEPROC,winbase.h,A,Enumeration pattern,false
+SetTimer,TIMERPROC,winuser.h,B,Timer dispatch hardened,true
+QueueUserAPC,PAPCFUNC,winbase.h,B,APC dispatch hardened,true
+CreateTimerQueueTimer,WAITORTIMERCALLBACK,threadpoolapiset.h,B,Timer variant likely hardened,false
+timeSetEvent,LPTIMECALLBACK,timeapi.h,B,Multimedia timer likely hardened,false
+CreateTimer,WAITORTIMERCALLBACK,threadpoolapiset.h,B,Timer variant,false
+SendMessageCallbackA,SENDASYNCPROC,winuser.h,C,Async message callback ambiguous,true
+SetWinEventHook,WINEVENTPROC,winuser.h,C,Event hook dispatch ambiguous,false
+RegisterApplicationRecoveryCallback,APPLICATION_RECOVERY_CALLBACK,winbase.h,C,Rare unknown enforcement,false
+RtlInstallFunctionTableCallback,PGET_RUNTIME_FUNCTION_CALLBACK,rtlsupportapi.h,C,Unwind table callback,false
+AddVectoredExceptionHandler,PVECTORED_EXCEPTION_HANDLER,winnt.h,C,Exception dispatch,false
+SetUnhandledExceptionFilter,LPTOP_LEVEL_EXCEPTION_FILTER,errhandlingapi.h,C,Exception dispatch,false
+DrawCaption,WNDPROC,winuser.h,C,Caption drawing callback,false

@@ -1,0 +1,8 @@
+api,callback_type,origin_dll,cfg_outcome,exit_code,reverse_tcp,windows_build,test_date
+CallWindowProcA,WNDPROC,user32.dll,Bypass,0,Established,22631,2025-06
+CallNextHookEx,HOOKPROC,user32.dll,Bypass,0,Established,22631,2025-06
+EnumWindows,WNDENUMPROC,user32.dll,Bypass,0,Established,22631,2025-06
+TrySubmitThreadpoolCallback,PTP_SIMPLE_CALLBACK,ntdll.dll,Bypass,0,Established,22631,2025-06
+SetTimer,TIMERPROC,user32.dll,Blocked,0xC0000139,N/A,22631,2025-06
+QueueUserAPC,PAPCFUNC,ntdll.dll,Blocked,0xC0000139,N/A,22631,2025-06
+SendMessageCallbackA,SENDASYNCPROC,user32.dll/ntdll.dll,Partial,0,Not dispatched,22631,2025-06
